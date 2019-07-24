@@ -3,7 +3,7 @@
     <div v-for="todo in todos" v-bind:key="todo.id" class="todo-item">
       <span>{{ todo.text }}</span>
       <m-checkbox v-model="todo.done" class="chk" />
-      <m-icon-button v-on:click="$emit('removeTodo', 'todo.id')">
+      <m-icon-button v-on:click="$emit('removeTodo', todo.id)">
         <m-icon icon="delete" />
       </m-icon-button>
     </div>
@@ -28,5 +28,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 6px;
 }
 </style>

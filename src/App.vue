@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <h1>Todo-List</h1>
+    <h1>Vue-Todo</h1>
     <div>
-      <div>Total Todos: {{todos.length}}</div>
+      <div class="total">Total Todos: {{todos.length}}</div>
       <m-text-field outlined id="todo-input" class="todo-input" v-model="inputText">
         <m-floating-label for="todo-input">New Todo</m-floating-label>
       </m-text-field>
@@ -39,7 +39,7 @@ export default {
   data: () => {
     return {
       id: 0,
-      todos: [{ id: 0, text: "Vue testen", done: false }],
+      todos: [{ id: 0, text: "Vue ausprobieren", done: false }],
       inputText: ""
     };
   },
@@ -56,7 +56,7 @@ export default {
       }
     },
     removeTodo: function(removeId) {
-      const index = this.todos.findIndex(todo => (todo.id = removeId));
+      const index = this.todos.findIndex(todo => todo.id === removeId);
       this.todos.splice(index, 1);
     }
   }
@@ -122,10 +122,17 @@ $main-green: #42b983;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 h1 {
-  margin: 40px 0 0;
   color: $main-green;
+  font-size: 54px;
+  margin: 20px;
+  text-shadow: 3px 3px #41936d;
+}
+
+.total {
+  margin-bottom: 12px;
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 </style>

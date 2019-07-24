@@ -5,5 +5,6 @@ module.exports = {
         includePaths: ['./node_modules']
       }
     }
-  }
+  },
+  publicPath: 'vue_todo_app'
 };
